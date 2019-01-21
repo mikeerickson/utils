@@ -1,15 +1,28 @@
 {
   "name": "utils",
-  "version": "1.0.0",
+  "version": "0.0.1-dev.3",
   "main": "index.js",
   "author": "Mike Erickson <codedungeon@gmail.com> (https://github.com/mikeerickson)",
   "license": "MIT",
+  "devDependencies": {
+    "babel-eslint": "10.0.1",
+    "eslint": "5.12.1",
+    "eslint-config-prettier": "3.6.0",
+    "eslint-plugin-prettier": "3.0.1",
+    "mocha": "5.2.0"
+  },
   "dependencies": {
     "date-fns": "2.0.0-alpha.27",
-    "mocha": "5.2.0",
+    "prettier": "1.16.0",
     "strftime": "0.10.0"
   },
   "scripts": {
+    "bump": "yarn run bump:dev",
+    "bump:dev": "version-bump cli pre-release:dev",
+    "bump:patch": "version-bump cli patch",
+    "bump:minor": "version-bump cli minor",
+    "format": "prettier --write \"{**/*.js,__tests__/**/*.js}\" --loglevel error",
+    "lint": "eslint ./**/*.js --fix",
     "test": "mocha ./test/*.test.js"
   }
 }

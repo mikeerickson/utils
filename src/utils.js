@@ -1,8 +1,10 @@
-const { format, getMilliseconds } = require('date-fns')
 const strftime = require('strftime')
+const classNames = require('classnames')
+const { format, getMilliseconds } = require('date-fns')
 
 const utils = {
   strftime,
+
   padZero(num = 0, size = 3) {
     return ('000000000' + num).substr(-size)
   },
@@ -19,6 +21,7 @@ const utils = {
     const winSize = require('window-size')
     return winSize === undefined ? { width: 100 } : winSize
   },
+
   wordwrap(str, maxChars, lineEnd = '\n') {
     let sum_length_of_words = word_array => {
       let out = 0
@@ -85,7 +88,20 @@ const utils = {
 
     return split_out.join(lineEnd)
   },
-  deepMerge() {}
+
+  deepMerge(obj) {
+    return { ...obj }
+  },
+
+  classnames(args) {
+    return classNames(args)
+  }
 }
 
 module.exports = utils
+
+// export all methods so they call be used statically
+exports.classnames = utils.classnames
+exports.timestamp = utils.timestamp
+exports.padZero = utils.padZero
+exports.wordwrap = utils.wordwrap

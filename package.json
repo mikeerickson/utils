@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "chai": "4.2.0",
+    "classnames": "2.2.6",
     "date-fns": "2.0.0-alpha.27",
     "prettier": "1.16.0",
     "strftime": "0.10.0"

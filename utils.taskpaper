@@ -1,6 +1,9 @@
 Inbox:
-	- test wordwrap @na
-	- add deepMerge @na
+	- add individual method exports @na
+	- add typescript definitions @na
+	- add classnames test @na
+	- test wordwrap @na @today
+	- add deepMerge @na @priority(1) @today
 Archive:
   - add timestamp @na @done @project(Inbox)
   - add padZero @na @done @project(Inbox)

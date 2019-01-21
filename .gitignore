@@ -1,1 +1,6 @@
 node_modules/
+NOTES.md
+logs/*
+*.log
+*.taskpaper
+sandbox/

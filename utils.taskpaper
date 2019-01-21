@@ -1,4 +1,6 @@
 Inbox:
+	- publish scoped package @na
+		Locate article of how it should be done, I believe I already created notes in 'messenger' package
 	- add individual method exports @na
 	- add typescript definitions @na
 	- add classnames test @na

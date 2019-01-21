@@ -1,8 +1,9 @@
-# Utils
+# @codedungeon/utils
 
 ## Description
 
-** Project Description **
+Codedungeon utilities used in most of the projects I work with. These may exist in other libraries, but I like to have it all in one single package so I dont have to worry about bringing in a slew of other smaller packages.
+Dont get me wrong, I love the small concept, but these routines are my frequently used.
 
 ### Usage
 

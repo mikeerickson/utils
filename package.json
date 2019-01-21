@@ -1,0 +1,15 @@
+{
+  "name": "utils",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Mike Erickson <codedungeon@gmail.com> (https://github.com/mikeerickson)",
+  "license": "MIT",
+  "dependencies": {
+    "date-fns": "2.0.0-alpha.27",
+    "mocha": "5.2.0",
+    "strftime": "0.10.0"
+  },
+  "scripts": {
+    "test": "mocha ./test/*.test.js"
+  }
+}

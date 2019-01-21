@@ -1,0 +1,15 @@
+Inbox:
+	- add timestamp @na
+	- add deepMerge @na
+	- add padZero @na
+utils:
+	New Features:
+	Ideas:
+	Bugs:
+Archive:
+Search Definitions:
+	Top Priority @search(@priority = 5 and not @done)
+	High Priority @search(@priority > 3 and not @done)
+	Maybe @search(@maybe)
+	Next @search(@na and not @done and not project = "Archive")
+

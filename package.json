@@ -1,6 +1,6 @@
 {
   "name": "@codedungeon/utils",
-  "version": "0.0.1-dev.5",
+  "version": "0.0.1-dev.6",
   "description": "codedungeon common utils",
   "keywords": [
     "utils",
@@ -32,6 +32,7 @@
     "format": "prettier --write \"{**/*.js,__tests__/**/*.js}\" --loglevel error",
     "lint": "eslint ./**/*.js --fix",
     "pre-commit": "yarn run test && yarn run lint",
-    "test": "mocha ./test/*.test.js"
+    "test": "mocha ./test/*.test.js",
+    "test:ci": "yarn run test --reporter dot"
   }
 }

@@ -1,0 +1,8 @@
+{
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#269F42"
+  },
+  "mocha.enabled": false,
+  "mocha.glob": "**/*.test.js",
+  "mocha.sourceDir": "./test/**/*.test.js"
+}

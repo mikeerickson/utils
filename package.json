@@ -1,6 +1,12 @@
 {
-  "name": "utils",
+  "name": "@codedungeon/utils",
   "version": "0.0.1-dev.3",
+  "description": "codedungeon common utils",
+  "keywords": [
+    "utils",
+    "common",
+    "codedungeon"
+  ],
   "main": "index.js",
   "author": "Mike Erickson <codedungeon@gmail.com> (https://github.com/mikeerickson)",
   "license": "MIT",
@@ -12,17 +18,19 @@
     "mocha": "5.2.0"
   },
   "dependencies": {
+    "chai": "4.2.0",
     "date-fns": "2.0.0-alpha.27",
     "prettier": "1.16.0",
     "strftime": "0.10.0"
   },
   "scripts": {
-    "bump": "yarn run bump:dev",
     "bump:dev": "version-bump cli pre-release:dev",
-    "bump:patch": "version-bump cli patch",
     "bump:minor": "version-bump cli minor",
+    "bump:patch": "version-bump cli patch",
+    "bump": "yarn run bump:dev",
     "format": "prettier --write \"{**/*.js,__tests__/**/*.js}\" --loglevel error",
     "lint": "eslint ./**/*.js --fix",
+    "pre-commit": "yarn run test && yarn run lint",
     "test": "mocha ./test/*.test.js"
   }
 }

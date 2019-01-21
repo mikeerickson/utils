@@ -1,12 +1,9 @@
 Inbox:
-	- add timestamp @na
+	- test wordwrap @na
 	- add deepMerge @na
-	- add padZero @na
-utils:
-	New Features:
-	Ideas:
-	Bugs:
 Archive:
+  - add timestamp @na @done @project(Inbox)
+  - add padZero @na @done @project(Inbox)
 Search Definitions:
 	Top Priority @search(@priority = 5 and not @done)
 	High Priority @search(@priority > 3 and not @done)

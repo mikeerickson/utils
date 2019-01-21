@@ -16,7 +16,7 @@ describe('Utils Module', () => {
       expect(ts).to.matches(/([0-5]?[0-9]):([0-5]?[0-9]):([0-5]?[0-9]) ([AaPp][Mm])/)
       done()
     })
-    it('show default timestamp w/ AMPM', done => {
+    it('show default timestamp w/ AMPM and no seconds', done => {
       let ts = utils.timestamp(true, false)
       expect(ts).to.matches(/([0-5]?[0-9]):([0-5]?[0-9]) ([AaPp][Mm])/)
       done()

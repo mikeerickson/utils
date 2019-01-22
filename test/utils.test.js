@@ -3,8 +3,6 @@ const { expect } = require('chai')
 const { timestamp, padZero, classnames, wordwrap } = require('../')
 
 describe('Utils Module', () => {
-  // https://www.oreilly.com/library/view/regular-expressions-cookbook/9781449327453/ch04s06.html
-  // https://stackoverflow.com/questions/4271553/how-do-i-write-a-regular-expression-to-match-any-three-digit-number-value
   describe('Utils: Timestamp', () => {
     it('should confirm exports are valid functions', done => {
       expect(typeof timestamp).to.be.equal('function')

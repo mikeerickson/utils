@@ -3,6 +3,8 @@ const classNames = require('classnames')
 const { format, getMilliseconds } = require('date-fns')
 const { promisify } = require('util')
 const fs = require('fs-extra')
+const ejs = require('ejs')
+const chalk = require('chalk')
 
 const Haikunator = require('haikunator')
 
@@ -48,9 +50,15 @@ const utils = {
   strftime,
   promisify,
   fs,
+  colors: chalk,
+  dotProp: require('dot-prop'),
+  dot: require('dot-prop'),
   uuid: require('uuid/v1'),
   userHome: () => {
     return require('os').homedir()
+  },
+  render: (template = '', data = {}) => {
+    return ejs.render(template, data)
   },
 
   padZero(num = 0, size = 3) {
@@ -159,3 +167,9 @@ exports.timestamp = utils.timestamp
 exports.padZero = utils.padZero
 exports.wordwrap = utils.wordwrap
 exports.randomName = utils.randomName
+exports.render = utils.render
+exports.promisify = utils.promisify
+exports.fs = utils.fs
+exports.colors = utils.colors
+exports.dotProp = utils.dotProp
+exports.dot = utils.dot

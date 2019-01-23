@@ -1,6 +1,18 @@
 const utils = require('../')
 const { expect } = require('chai')
-const { timestamp, padZero, classnames, wordwrap, randomName, promisify } = require('../')
+const {
+  timestamp,
+  padZero,
+  classnames,
+  wordwrap,
+  randomName,
+  promisify,
+  render,
+  colors,
+  fs,
+  dotProp,
+  dot
+} = require('../')
 
 describe('Utils Module', () => {
   describe('Utils: Timestamp', () => {
@@ -100,6 +112,41 @@ describe('Utils Module', () => {
     it('should confirm exports are valid functions', done => {
       expect(typeof promisify).to.be.equal('function')
       expect(typeof utils.promisify).to.be.equal('function')
+      done()
+    })
+  })
+  describe('Utils: Render', () => {
+    it('should confirm exports are valid functions', done => {
+      expect(typeof render).to.be.equal('function')
+      expect(typeof utils.render).to.be.equal('function')
+      done()
+    })
+  })
+  describe('Utils: Colors', () => {
+    it('should confirm exports are valid functions', done => {
+      expect(typeof colors).to.be.equal('function')
+      expect(typeof utils.colors).to.be.equal('function')
+      done()
+    })
+  })
+  describe('Utils: fs', () => {
+    it('should confirm exports are valid objects', done => {
+      expect(typeof fs).to.be.equal('object')
+      expect(typeof utils.fs).to.be.equal('object')
+      done()
+    })
+  })
+  describe('Utils: dotProp', () => {
+    it('should confirm exports are valid objects', done => {
+      expect(typeof dotProp).to.be.equal('object')
+      expect(typeof utils.dotProp).to.be.equal('object')
+      done()
+    })
+  })
+  describe('Utils: dot', () => {
+    it('should confirm exports are valid objects', done => {
+      expect(typeof dot).to.be.equal('object')
+      expect(typeof utils.dot).to.be.equal('object')
       done()
     })
   })

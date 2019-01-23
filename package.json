@@ -21,8 +21,11 @@
     "chai": "4.2.0",
     "classnames": "2.2.6",
     "date-fns": "2.0.0-alpha.27",
+    "fs-extra": "7.0.1",
+    "haikunator": "2.0.0",
     "prettier": "1.16.0",
-    "strftime": "0.10.0"
+    "strftime": "0.10.0",
+    "uuid": "3.3.2"
   },
   "scripts": {
     "bump:dev": "version-bump cli pre-release:dev",

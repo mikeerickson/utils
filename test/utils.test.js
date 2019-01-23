@@ -1,6 +1,6 @@
 const utils = require('../')
 const { expect } = require('chai')
-const { timestamp, padZero, classnames, wordwrap } = require('../')
+const { timestamp, padZero, classnames, wordwrap, randomName, promisify } = require('../')
 
 describe('Utils Module', () => {
   describe('Utils: Timestamp', () => {
@@ -86,6 +86,20 @@ describe('Utils Module', () => {
     it('should confirm exports are valid functions', done => {
       expect(typeof wordwrap).to.be.equal('function')
       expect(typeof utils.wordwrap).to.be.equal('function')
+      done()
+    })
+  }),
+  describe('Utils: Random Name', () => {
+    it('should confirm exports are valid functions', done => {
+      expect(typeof randomName).to.be.equal('function')
+      expect(typeof utils.randomName).to.be.equal('function')
+      done()
+    })
+  }),
+  describe('Utils: Promisify', () => {
+    it('should confirm exports are valid functions', done => {
+      expect(typeof promisify).to.be.equal('function')
+      expect(typeof utils.promisify).to.be.equal('function')
       done()
     })
   })

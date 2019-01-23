@@ -1,9 +1,57 @@
 const strftime = require('strftime')
 const classNames = require('classnames')
 const { format, getMilliseconds } = require('date-fns')
+const { promisify } = require('util')
+const fs = require('fs-extra')
+
+const Haikunator = require('haikunator')
+
+const haikunator = new Haikunator()
+
+// Array reference
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+// extend the Array proptype with some useful helpers
+Array.prototype.insert = function(index, item) {
+  if (typeof index === 'string') {
+    item = index
+    index = 0
+  } else {
+    index = index === -1 ? 0 : index
+  }
+  this.splice(index, 0, item)
+}
+
+Array.prototype.append = function(item = '') {
+  this.push(item)
+}
+
+Array.prototype.delete = function(index = 0, numItems = 1) {
+  index = index > this.length ? this.length - 1 : index
+  index === -1 ? this.splice(this.length - 1, 1) : this.splice(index, numItems)
+}
+
+Array.prototype.remove = function(index = 0, numItems = 1) {
+  index = index > this.length ? this.length - 1 : index
+  index === -1 ? this.splice(this.length - 1, 1) : this.splice(index, numItems)
+}
+
+Array.prototype.findInArray = function(item = '') {
+  return this.indexOf(item)
+}
+
+Array.prototype.search = function(item = '') {
+  return this.indexOf(item)
+}
 
 const utils = {
   strftime,
+  promisify,
+  fs,
+  uuid: require('uuid/v1'),
+  userHome: () => {
+    return require('os').homedir()
+  },
 
   padZero(num = 0, size = 3) {
     return ('000000000' + num).substr(-size)
@@ -95,6 +143,10 @@ const utils = {
 
   classnames(args) {
     return classNames(args)
+  },
+
+  randomName: (tokenLength = 0) => {
+    return haikunator.haikunate({ tokenLength })
   }
 }
 
@@ -102,6 +154,8 @@ module.exports = utils
 
 // export all methods so they call be used statically
 exports.classnames = utils.classnames
+exports.deepMerge = utils.deepMerge
 exports.timestamp = utils.timestamp
 exports.padZero = utils.padZero
 exports.wordwrap = utils.wordwrap
+exports.randomName = utils.randomName

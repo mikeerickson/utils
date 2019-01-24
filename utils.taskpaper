@@ -1,12 +1,11 @@
-Inbox:
-	- publish scoped package @na
-		Locate article of how it should be done, I believe I already created notes in 'messenger' package
-	- add individual method exports @na
-	- add typescript definitions @na
-	- add classnames test @na
-	- test wordwrap @na @today
-	- add deepMerge @na @priority(1) @today
 Archive:
+  - add typescript definitions @na @done @project(Inbox)
+  - publish scoped package @na @done @project(Inbox)
+    Locate article of how it should be done, I believe I already created notes in 'messenger' package
+  - add individual method exports @na @done @project(Inbox)
+  - add classnames test @na @done @project(Inbox)
+  - test wordwrap @na @today @done @project(Inbox)
+  - add deepMerge @na @priority(1) @today @done @project(Inbox)
   - add timestamp @na @done @project(Inbox)
   - add padZero @na @done @project(Inbox)
 Search Definitions:

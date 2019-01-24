@@ -93,6 +93,18 @@ describe('Utils Module', () => {
       expect(typeof utils.classnames).to.be.equal('function')
       done()
     })
+    it('should properly generate class name strings based on array content using class method', done => {
+      let items = ['one', 'two', 'three']
+      let result = utils.classnames(items)
+      expect(result).to.equal('one two three')
+      done()
+    })
+    it('should properly generate class name strings based on array content using static method', done => {
+      let items = ['one', 'two', 'three']
+      let result = classnames(items)
+      expect(result).to.equal('one two three')
+      done()
+    })
   })
   describe('Utils: Wordwrap', () => {
     it('should confirm exports are valid functions', done => {
@@ -100,11 +112,50 @@ describe('Utils Module', () => {
       expect(typeof utils.wordwrap).to.be.equal('function')
       done()
     })
+    it('should wrap words based on desired length', done => {
+      let test = 'Now is the time for all good men to come to the aid of their country and fight!'
+      let wrapped = wordwrap(test, 10)
+      let items = wrapped.split('\n')
+
+      expect(items.length).to.equal(7)
+      expect(items[0]).to.contain('Now is the')
+      expect(items[1]).to.contain('time for all')
+      expect(items[2]).to.contain('good men to')
+      expect(items[3]).to.contain('come to the')
+      expect(items[4]).to.contain('aid of their')
+      expect(items[5]).to.contain('country and')
+      expect(items[6]).to.contain('fight!')
+      done()
+    })
   }),
   describe('Utils: Random Name', () => {
     it('should confirm exports are valid functions', done => {
       expect(typeof randomName).to.be.equal('function')
       expect(typeof utils.randomName).to.be.equal('function')
+      done()
+    })
+    it('should generate a randon name using static method', done => {
+      let result = randomName()
+      expect(result).to.not.match(/([0-9])/)
+      expect(result.length).to.be.greaterThan(3)
+      done()
+    })
+    it('should generate a randon name using static method', done => {
+      let result = randomName(10)
+      expect(result.length).to.be.greaterThan(9)
+      expect(result).to.match(/([0-9])/)
+
+      done()
+    })
+    it('should generate a randon name using static method', done => {
+      let result = randomName(20)
+      expect(result.length).to.be.greaterThan(19)
+      expect(result).to.match(/([0-9])/)
+      done()
+    })
+    it('should generate a randon name using class method', done => {
+      let result = utils.randomName()
+      expect(result.length).to.be.greaterThan(3)
       done()
     })
   }),

@@ -1,4 +1,9 @@
+	- add has test @na
+	- add tests for all missing tests @na
 Archive:
+  - quick test to see if it works without TaskPaper @na @done
+  - seems to not work without taskpaper @na @done
+  - add promisify test @na @done
   - add typescript definitions @na @done @project(Inbox)
   - publish scoped package @na @done @project(Inbox)
     Locate article of how it should be done, I believe I already created notes in 'messenger' package

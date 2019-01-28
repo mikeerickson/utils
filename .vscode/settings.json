@@ -4,5 +4,6 @@
   },
   "mocha.enabled": false,
   "mocha.glob": "**/*.test.js",
-  "mocha.sourceDir": "./test/**/*.test.js"
+  "mocha.sourceDir": "./test/**/*.test.js",
+  "testExplorer.codeLens": false
 }

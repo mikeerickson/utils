@@ -11,7 +11,8 @@ const {
   colors,
   fs,
   dotProp,
-  dot
+  dot,
+  has
 } = require('../')
 
 describe('Utils Module', () => {
@@ -106,6 +107,24 @@ describe('Utils Module', () => {
       done()
     })
   })
+  describe('Utils: Has', () => {
+    it('should confirm exports are valid functions', done => {
+      expect(typeof has).to.be.equal('function')
+      expect(typeof utils.has).to.be.equal('function')
+      done()
+    })
+    it('should properly return has result', done => {
+      let result = has(Object.prototype, 'hasOwnProperty')
+      expect(result).to.equal(true) // true
+      done()
+    })
+    it('should confirm has works with nested objects', done => {
+      let mike = { fname: 'Mike', kids: { joelle: true } }
+      let result = has(mike,'kids.joelle')
+      expect(result).to.equal(true) // true
+      done()
+    })
+  })
   describe('Utils: Wordwrap', () => {
     it('should confirm exports are valid functions', done => {
       expect(typeof wordwrap).to.be.equal('function')
@@ -140,14 +159,14 @@ describe('Utils Module', () => {
       expect(result.length).to.be.greaterThan(3)
       done()
     })
-    it('should generate a randon name using static method', done => {
+    it('should generate a randon name using static method w/ desired token length', done => {
       let result = randomName(10)
       expect(result.length).to.be.greaterThan(9)
       expect(result).to.match(/([0-9])/)
 
       done()
     })
-    it('should generate a randon name using static method', done => {
+    it('should generate a randon name using static method w/ alternate length', done => {
       let result = randomName(20)
       expect(result.length).to.be.greaterThan(19)
       expect(result).to.match(/([0-9])/)
@@ -165,6 +184,28 @@ describe('Utils Module', () => {
       expect(typeof utils.promisify).to.be.equal('function')
       done()
     })
+    it('should execute callback method as a promise', done => {
+      const fs = require('fs') // we will make a callback style fs call via promise
+      const stat = promisify(fs.stat)
+      stat(__filename) // get stats for current testfile
+        .then(stats => {
+          let bt = new Date(stats.birthtime)
+
+          // this is the known creation date, if this test is moved to a new file
+          // these values will need to be adjust accordingly (or remove the specificity of the test)
+          expect(bt.getMonth() + 1).to.be.equal(1)
+          expect(bt.getDate()).to.be.equal(21)
+          expect(bt.getFullYear()).to.be.equal(2019)
+          expect(stats.size).to.be.greaterThan(7000)
+          done()
+        })
+        .catch(error => {
+          // if all is good, we should never get here
+          console.error(colors.red('handle error\n'), colors.red(error))
+          expect(false).to.be.equal(true)
+          done()
+        })
+    })
   })
   describe('Utils: Render', () => {
     it('should confirm exports are valid functions', done => {
@@ -178,6 +219,8 @@ describe('Utils Module', () => {
       expect(typeof colors).to.be.equal('function')
       expect(typeof utils.colors).to.be.equal('function')
       done()
+      // we dont need to perform any further tests, we know this library works
+      // just need to make sure the entrypoints are exposed correclty
     })
   })
   describe('Utils: fs', () => {
@@ -185,6 +228,25 @@ describe('Utils Module', () => {
       expect(typeof fs).to.be.equal('object')
       expect(typeof utils.fs).to.be.equal('object')
       done()
+    })
+    // note:  this is a wrapper for fs-extras, do a quick and dirty promise call
+    //        review the `promisify` method as well to see this same test
+    it('should perform a simple fs call using promises', done => {
+      fs.stat(__filename)
+        .then(stats => {
+          let bt = new Date(stats.birthtime)
+          expect(bt.getMonth() + 1).to.be.equal(1)
+          expect(bt.getDate()).to.be.equal(21)
+          expect(bt.getFullYear()).to.be.equal(2019)
+          expect(stats.size).to.be.greaterThan(7000)
+          done()
+        })
+        .catch(error => {
+          // if all is good, we should never get here
+          console.error(colors.red('handle error\n'), colors.red(error))
+          expect(false).to.be.equal(true)
+          done()
+        })
     })
   })
   describe('Utils: dotProp', () => {

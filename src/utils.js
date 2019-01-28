@@ -51,6 +51,7 @@ const utils = {
   promisify,
   fs,
   colors: chalk,
+  has: require('has-value'),
   dotProp: require('dot-prop'),
   dot: require('dot-prop'),
   uuid: require('uuid/v1'),
@@ -173,3 +174,4 @@ exports.fs = utils.fs
 exports.colors = utils.colors
 exports.dotProp = utils.dotProp
 exports.dot = utils.dot
+exports.has = utils.has

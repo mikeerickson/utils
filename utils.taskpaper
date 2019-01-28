@@ -1,6 +1,6 @@
-	- add has test @na
 	- add tests for all missing tests @na
 Archive:
+  - add has test @na @done
   - quick test to see if it works without TaskPaper @na @done
   - seems to not work without taskpaper @na @done
   - add promisify test @na @done

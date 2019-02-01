@@ -1,4 +1,5 @@
-const utils = require('../')
+const path = require('path')
+const utils      = require('../')
 const { expect } = require('chai')
 const {
   timestamp,
@@ -12,7 +13,9 @@ const {
   fs,
   dotProp,
   dot,
-  has
+  has,
+  tildify,
+  userHome
 } = require('../')
 
 describe('Utils Module', () => {
@@ -95,13 +98,13 @@ describe('Utils Module', () => {
       done()
     })
     it('should properly generate class name strings based on array content using class method', done => {
-      let items = ['one', 'two', 'three']
+      let items  = ['one', 'two', 'three']
       let result = utils.classnames(items)
       expect(result).to.equal('one two three')
       done()
     })
     it('should properly generate class name strings based on array content using static method', done => {
-      let items = ['one', 'two', 'three']
+      let items  = ['one', 'two', 'three']
       let result = classnames(items)
       expect(result).to.equal('one two three')
       done()
@@ -119,8 +122,8 @@ describe('Utils Module', () => {
       done()
     })
     it('should confirm has works with nested objects', done => {
-      let mike = { fname: 'Mike', kids: { joelle: true } }
-      let result = has(mike,'kids.joelle')
+      let mike   = { fname: 'Mike', kids: { joelle: true } }
+      let result = has(mike, 'kids.joelle')
       expect(result).to.equal(true) // true
       done()
     })
@@ -132,9 +135,9 @@ describe('Utils Module', () => {
       done()
     })
     it('should wrap words based on desired length', done => {
-      let test = 'Now is the time for all good men to come to the aid of their country and fight!'
+      let test    = 'Now is the time for all good men to come to the aid of their country and fight!'
       let wrapped = wordwrap(test, 10)
-      let items = wrapped.split('\n')
+      let items   = wrapped.split('\n')
 
       expect(items.length).to.equal(7)
       expect(items[0]).to.contain('Now is the')
@@ -185,7 +188,7 @@ describe('Utils Module', () => {
       done()
     })
     it('should execute callback method as a promise', done => {
-      const fs = require('fs') // we will make a callback style fs call via promise
+      const fs   = require('fs')       // we will make a callback style fs call via promise
       const stat = promisify(fs.stat)
       stat(__filename) // get stats for current testfile
         .then(stats => {
@@ -221,6 +224,18 @@ describe('Utils Module', () => {
       done()
       // we dont need to perform any further tests, we know this library works
       // just need to make sure the entrypoints are exposed correclty
+    })
+  })
+  describe('Utils: Tildify', () => {
+    it('should confirm exports are valid functions', done => {
+      expect(typeof tildify).to.be.equal('function')
+      expect(typeof utils.tildify).to.be.equal('function')
+      done()
+    })
+    it('should tildify supplied filename', () => {
+      let filename = path.join(__dirname, 'test.txt')
+      let result   = tildify(filename)
+      console.log(userHome())
     })
   })
   describe('Utils: fs', () => {

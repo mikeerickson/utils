@@ -19,3 +19,8 @@ Search Definitions:
 	Maybe @search(@maybe)
 	Next @search(@na and not @done and not project = "Archive")
 
+Inbox: @inbox
+	- does fs-extra have fs-path type routine @na
+	- is fs-path same as fs-extra @na
+	- add fs-path to project @na
+	- add tildify @na

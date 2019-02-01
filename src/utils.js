@@ -47,13 +47,14 @@ Array.prototype.search = function(item = '') {
 }
 
 const utils = {
-  strftime,
-  promisify,
-  fs,
   colors: chalk,
-  has: require('has-value'),
-  dotProp: require('dot-prop'),
+  fs,
+  promisify,
+  strftime,
   dot: require('dot-prop'),
+  dotProp: require('dot-prop'),
+  has: require('has-value'),
+  tildify: require('tildify'),
   uuid: require('uuid/v1'),
   userHome: () => {
     return require('os').homedir()
@@ -175,3 +176,5 @@ exports.colors = utils.colors
 exports.dotProp = utils.dotProp
 exports.dot = utils.dot
 exports.has = utils.has
+exports.tildify = utils.tildify
+exports.userHome = utils.userHome

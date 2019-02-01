@@ -12,8 +12,8 @@
   "license": "MIT",
   "devDependencies": {
     "babel-eslint": "10.0.1",
-    "eslint": "5.12.1",
-    "eslint-config-prettier": "3.6.0",
+    "eslint": "5.13.0",
+    "eslint-config-prettier": "4.0.0",
     "eslint-plugin-prettier": "3.0.1",
     "mocha": "5.2.0"
   },
@@ -26,7 +26,7 @@
     "fs-extra": "7.0.1",
     "haikunator": "2.0.0",
     "has-value": "2.0.2",
-    "prettier": "1.16.0",
+    "prettier": "1.16.3",
     "strftime": "0.10.0",
     "tildify": "1.2.0",
     "uuid": "3.3.2"

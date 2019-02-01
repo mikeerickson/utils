@@ -1,5 +1,5 @@
-	- add tests for all missing tests @na
 Archive:
+  - add tests for all missing tests @na @done @project(Inbox)
   - add has test @na @done
   - quick test to see if it works without TaskPaper @na @done
   - seems to not work without taskpaper @na @done

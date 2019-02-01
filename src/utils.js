@@ -3,6 +3,7 @@ const classNames = require('classnames')
 const { format, getMilliseconds } = require('date-fns')
 const { promisify } = require('util')
 const fs = require('fs-extra')
+const fsPath = require('fs-path')
 const ejs = require('ejs')
 const chalk = require('chalk')
 
@@ -49,6 +50,7 @@ Array.prototype.search = function(item = '') {
 const utils = {
   colors: chalk,
   fs,
+  fsPath,
   promisify,
   strftime,
   dot: require('dot-prop'),
@@ -172,6 +174,7 @@ exports.randomName = utils.randomName
 exports.render = utils.render
 exports.promisify = utils.promisify
 exports.fs = utils.fs
+exports.fsPath = utils.fsPath
 exports.colors = utils.colors
 exports.dotProp = utils.dotProp
 exports.dot = utils.dot

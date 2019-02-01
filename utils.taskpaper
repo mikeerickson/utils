@@ -23,3 +23,5 @@ Search Definitions:
 	High Priority @search(@priority > 3 and not @done)
 	Maybe @search(@maybe)
 	Next @search(@na and not @done and not project = "Archive")
+Inbox: @inbox
+	- add fs-path tests @na

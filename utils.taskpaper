@@ -1,4 +1,6 @@
-	- test skipped tests on docker @na
+Inbox: @inbox
+	- add fs-path tests @na
+  - test skipped tests on docker @na
 Archive:
   - does fs-extra have fs-path type routine @na @done
   - is fs-path same as fs-extra @na @done
@@ -23,5 +25,4 @@ Search Definitions:
 	High Priority @search(@priority > 3 and not @done)
 	Maybe @search(@maybe)
 	Next @search(@na and not @done and not project = "Archive")
-Inbox: @inbox
-	- add fs-path tests @na
+

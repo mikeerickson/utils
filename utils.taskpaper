@@ -1,4 +1,9 @@
+	- test skipped tests on docker @na
 Archive:
+  - does fs-extra have fs-path type routine @na @done
+  - is fs-path same as fs-extra @na @done
+  - add fs-path to project @na @done
+  - add tildify @na @done
   - add tests for all missing tests @na @done @project(Inbox)
   - add has test @na @done
   - quick test to see if it works without TaskPaper @na @done
@@ -18,9 +23,3 @@ Search Definitions:
 	High Priority @search(@priority > 3 and not @done)
 	Maybe @search(@maybe)
 	Next @search(@na and not @done and not project = "Archive")
-
-Inbox: @inbox
-	- does fs-extra have fs-path type routine @na
-	- is fs-path same as fs-extra @na
-	- add fs-path to project @na
-	- add tildify @na

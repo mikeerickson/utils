@@ -15,7 +15,8 @@ const {
   dot,
   has,
   tildify,
-  userHome
+  userHome,
+  pretty
 } = require('../')
 
 describe('Utils Module', () => {
@@ -221,6 +222,15 @@ describe('Utils Module', () => {
     it('should confirm exports are valid functions', done => {
       expect(typeof colors).to.be.equal('function')
       expect(typeof utils.colors).to.be.equal('function')
+      done()
+      // we dont need to perform any further tests, we know this library works
+      // just need to make sure the entrypoints are exposed correclty
+    })
+  })
+  describe('Utils: Pretty', () => {
+    it('should confirm exports are valid functions', done => {
+      expect(typeof pretty).to.be.equal('function')
+      expect(typeof utils.pretty).to.be.equal('function')
       done()
       // we dont need to perform any further tests, we know this library works
       // just need to make sure the entrypoints are exposed correclty

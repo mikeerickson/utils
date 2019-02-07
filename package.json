@@ -18,6 +18,7 @@
     "mocha": "5.2.0"
   },
   "dependencies": {
+    "@medv/prettyjson": "1.0.1",
     "chai": "4.2.0",
     "classnames": "2.2.6",
     "date-fns": "2.0.0-alpha.27",

@@ -53,6 +53,7 @@ const utils = {
   fsPath,
   promisify,
   strftime,
+  pretty: require('@medv/prettyjson'),
   dot: require('dot-prop'),
   dotProp: require('dot-prop'),
   has: require('has-value'),
@@ -181,3 +182,4 @@ exports.dot = utils.dot
 exports.has = utils.has
 exports.tildify = utils.tildify
 exports.userHome = utils.userHome
+exports.pretty = utils.pretty

@@ -90,6 +90,14 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
+"@medv/prettyjson@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@medv/prettyjson/-/prettyjson-1.0.1.tgz#d14a2fdd817cdf3672d42dd35fa5a37deb8a6ff0"
+  integrity sha512-JnIV8EIfbPUKLB9qdmgLMCOALotwAb8sHGnomOOPfNBOpBHZepPfRltqUADQb2P9XUCaT/6qAgYfOCUSrXDCSg==
+  dependencies:
+    chalk "^2.4.1"
+    indent-string "^3.2.0"
+
 acorn-jsx@^5.0.0:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/acorn-jsx/-/acorn-jsx-5.0.1.tgz#32a064fd925429216a09b141102bfdd185fae40e"
@@ -201,7 +209,7 @@ chai@4.2.0:
     pathval "^1.1.0"
     type-detect "^4.0.5"
 
-chalk@^2.0.0, chalk@^2.1.0:
+chalk@^2.0.0, chalk@^2.1.0, chalk@^2.4.1:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.4.2.tgz#cd42541677a54333cf541a49108c1432b44c9424"
   integrity sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==
@@ -648,6 +656,11 @@ imurmurhash@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/imurmurhash/-/imurmurhash-0.1.4.tgz#9218b9b2b928a238b13dc4fb6b6d576f231453ea"
   integrity sha1-khi5srkoojixPcT7a21XbyMUU+o=
+
+indent-string@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/indent-string/-/indent-string-3.2.0.tgz#4a5fd6d27cc332f37e5419a504dbb837105c9289"
+  integrity sha1-Sl/W0nzDMvN+VBmlBNu4NxBckok=
 
 inflight@^1.0.4:
   version "1.0.6"

@@ -164,7 +164,7 @@ const utils = {
 
   random(min = 10, max = 100) {
     if (max > min) max = min
-    return Math.random() * (max - min) + min
+    return Math.floor(Math.random() * max) + min
   }
 }
 

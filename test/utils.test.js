@@ -297,10 +297,20 @@ describe('Utils Module', () => {
       done()
     })
     it('should return random value', done => {
-      let rnd = random(10, 20)
+      let rnd = random(10, 250)
       expect(rnd).to.be.greaterThan(9)
-      expect(rnd).to.be.lessThan(21)
+      expect(rnd).to.be.lessThan(251)
+      for (let idx = 0; idx < rnd; idx++) {
+        expect(idx).to.equal(idx)
+      }
       done()
     })
+
+    let rnd = random(50, 250)
+    for (let idx = 1; idx <= rnd; idx++) {
+      it('should return random value', () => {
+        expect(idx).to.equal(idx)
+      })
+    }
   })
 })

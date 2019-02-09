@@ -158,8 +158,13 @@ const utils = {
     return classNames(args)
   },
 
-  randomName: (tokenLength = 0) => {
+  randomName(tokenLength = 0) {
     return haikunator.haikunate({ tokenLength })
+  },
+
+  random(min = 10, max = 100) {
+    if(max>min) max = min
+    return Math.floor(Math.random() * max) + min
   }
 }
 
@@ -172,6 +177,7 @@ exports.timestamp = utils.timestamp
 exports.padZero = utils.padZero
 exports.wordwrap = utils.wordwrap
 exports.randomName = utils.randomName
+exports.random = utils.random
 exports.render = utils.render
 exports.promisify = utils.promisify
 exports.fs = utils.fs

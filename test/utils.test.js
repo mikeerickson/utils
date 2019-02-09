@@ -7,6 +7,7 @@ const {
   classnames,
   wordwrap,
   randomName,
+  random,
   promisify,
   render,
   colors,
@@ -286,6 +287,19 @@ describe('Utils Module', () => {
     it('should confirm exports are valid objects', done => {
       expect(typeof dot).to.be.equal('object')
       expect(typeof utils.dot).to.be.equal('object')
+      done()
+    })
+  })
+  describe('Utils: random', () => {
+    it('should confirm exports are valid objects', done => {
+      expect(typeof random).to.be.equal('function')
+      expect(typeof utils.random).to.be.equal('function')
+      done()
+    })
+    it('should return random value', done => {
+      let rnd = random(10, 20)
+      expect(rnd).to.be.greaterThan(9)
+      expect(rnd).to.be.lessThan(21)
       done()
     })
   })

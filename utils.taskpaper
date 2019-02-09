@@ -1,8 +1,8 @@
-Inbox: @inbox
-	- add random tests @na
-	- add fs-path tests @na
+Inbox:
+  	- add fs-path tests @na
   - test skipped tests on docker @na
 Archive:
+  - add random tests @na @done
   - does fs-extra have fs-path type routine @na @done
   - is fs-path same as fs-extra @na @done
   - add fs-path to project @na @done

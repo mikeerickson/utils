@@ -1,5 +1,14 @@
 Inbox:
-  	- add fs-path tests @na
+  - add `renderHandelbars` @na
+    https://www.npmjs.com/package/handlebars
+    -- See usage in laravel-craftsman
+  - add now() method, use strftime and match laravel method of same name @na
+    https://laravel.com/docs/5.8/helpers#method-now
+  - add strftime method @na
+    https://www.npmjs.com/package/strftime
+  - modify random routine to use better max range @na
+    https://gist.github.com/kerimdzhanov/7529623
+  - add fs-path tests @na
   - test skipped tests on docker @na
 Archive:
   - add random tests @na @done

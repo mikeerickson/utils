@@ -59,6 +59,9 @@ const utils = {
   has: require('has-value'),
   tildify: require('tildify'),
   uuid: require('uuid/v1'),
+  now: () => {
+    return strftime('%Y-%m-%d %H:%M:%S')
+  },
   userHome: () => {
     return require('os').homedir()
   },
